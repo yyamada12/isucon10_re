@@ -17,9 +17,6 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"github.com/labstack/gommon/log"
-
-	_ "net/http/pprof"
 )
 
 const Limit = 20
@@ -255,18 +252,13 @@ func init() {
 }
 
 func main() {
-
-	go func() {
-		fmt.Println(http.ListenAndServe("localhost:6060", nil))
-	}()
-
 	// Echo instance
 	e := echo.New()
-	e.Debug = true
-	e.Logger.SetLevel(log.DEBUG)
+	// e.Debug = true
+	// e.Logger.SetLevel(log.DEBUG)
 
 	// Middleware
-	e.Use(middleware.Logger())
+	// e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
 	// Initialize
