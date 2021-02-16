@@ -107,9 +107,9 @@ max_allowed_packet = 32505856
 
 [mysqld]
 innodb_buffer_pool_size=3G
-innodb_log_file_size=128M
+innodb_log_file_size=384M
+innodb_buffer_pool_instances=3
 innodb_flush_log_at_trx_commit=0
 innodb_flush_method=O_DIRECT
 innodb_support_xa=OFF
 max_connections=10000
-table_open_cache=5000
